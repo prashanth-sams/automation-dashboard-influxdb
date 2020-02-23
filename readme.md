@@ -1,6 +1,8 @@
 # Automation Dashboard [InfluxDB + Grafana]
 > Dashboard to monitor live automation results using InfluxDB in Grafana
 
+![Dashboard](https://i.imgur.com/eMxrL8s.png)
+
 Create namespace; say, `monitoring`
 ```
 kubectl create namespace monitoring
@@ -36,7 +38,7 @@ SHOW SERIES
 ```
 #### Post data using endpoint
 ```
-curl -i -XPOST 'http://localhost:8086/write?db=dashboard' --data-binary 'country status=3'
+curl -i -XPOST 'http://localhost:8086/write?db=dashboard' --data-binary 'baseline passed=5,failed=1,pending=1'
 ```
 
 ## **Grafana**
